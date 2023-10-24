@@ -18,7 +18,7 @@ mvn exec:java
 
 Tambien esta la posibilidad de crear un contenedor con Docker, la imagen esta en su respectivo repositorio: https://hub.docker.com/repository/docker/juanpablodaza/arep-parcial-2/general
 
-Si se tiene Docker instalado es posible utilizar el siguiente comando para poder crear un contenedor y comprobar el funcionamiento.
+Si se tiene Docker instalado es posible utilizar el siguiente comando para crear un contenedor y comprobar el funcionamiento.
 
 ```
 docker run -d -p 34000:5000 --name arep-parcial-2 juanpablodaza/arep-parcial-2
@@ -26,7 +26,7 @@ docker run -d -p 34000:5000 --name arep-parcial-2 juanpablodaza/arep-parcial-2
 
 ### Arquitectura:
 
-La arquitectura se compone de una sola clase Collatz.java la cual usar Spark,la cual responde a las peticiones REST y retorna el resultado de la funcion requerida. La funcion en este caso es la secuencia Collatz, si se conecta al servidor, este retorna el index.html y dentro de este hay un espacio para escribir el número y enviarlo para recibir el resultado:<br>
+La arquitectura se compone de una sola clase Collatz.java la cual usa Spark. Esta clase responde a las peticiones REST y retorna el resultado de la función requerida. La función en este caso es la secuencia Collatz, si se conecta al servidor, este retorna el index.html y dentro de este hay un espacio para escribir el número y enviarlo para recibir el resultado:<br>
 
 Utilizando el comando ```mvn exec:java```:<br>
 
@@ -50,11 +50,11 @@ Para esto vamos a manejar una instancia EC2, dentro de esta debemos instalar Doc
 
 ![](./Imagenes/DockerInstanciaEC2.png)<br>
 
-De lo anterior podemos ver que usamos el mismo comando de Docker que escribi anteriormente en este documento. No debemos olvidarnos de que debemos abrir el puero 34000 para poder realizar la prueba:
+De lo anterior podemos ver que usamos el mismo comando de Docker que escribí anteriormente en este documento. No debemos olvidarnos de que debemos abrir el puerto 34000 para poder realizar la prueba:
 
 ![](./Imagenes/PuertoEC2.png)<br>
 
-Ahora usando la direccion ipv4 (http://ec2-3-87-215-239.compute-1.amazonaws.com/) que nos facilita AWS de la instancia podemos realiza la misma prueba escribiendo el puerto 34000 que es el que asignamos al contenedor de Docker:<br>
+Ahora usando la direccion ipv4 (http://ec2-3-87-215-239.compute-1.amazonaws.com/) que nos facilita AWS de la instancia podemos realizar la misma prueba escribiendo el puerto 34000 que es el que asignamos al contenedor de Docker:<br>
 
 ![](./Imagenes/IndexAWS.png)<br>
 
@@ -62,5 +62,5 @@ Ahora realizamos la prueba de la función:<br>
 
 ![](./Imagenes/ResultadoEC2.png)<br>
 
-La grabacion del funcionamiento es la siguiente https://pruebacorreoescuelaingeduco.sharepoint.com/:v:/s/Reunion468/EaIXvQyDFR9KoHpJ73dRPYMBZPEA2NWMjxfbxKRek-fRGw?e=4vpanb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19
+La grabación del funcionamiento es la siguiente: https://pruebacorreoescuelaingeduco.sharepoint.com/:v:/s/Reunion468/EaIXvQyDFR9KoHpJ73dRPYMBZPEA2NWMjxfbxKRek-fRGw?e=4vpanb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19
 
